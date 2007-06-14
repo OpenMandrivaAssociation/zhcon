@@ -16,24 +16,6 @@ Source0:	%{name}-%{version}.tar.gz
 Source1:	%{name}-0.2.3-config.tar.bz2
 # 0.2.3-1mdk (Abel) small script to check for appropriate config file
 Source2:	zhcon-config.sh
-# 0.2.3-1mdk (Abel) http://www.okpos.com/wiki/pos/ZhconKoreanPatch
-Patch0:		%{name}-0.2.2-korean-input-0.2.patch
-# 0.2.3-2mdk (Abel) GCC 3.x fix
-Patch1:		%{name}-0.2.3-gcc3.patch
-# 0.2.3-1mdk (Abel) Fix debug flag in configure.in
-Patch2:		%{name}-0.2.3-configure-fix.patch
-# 0.2.3-1mdk (Abel) Allow non-root install
-Patch3:		%{name}-0.2.3-nonroot.patch
-# 0.2.3-1mdk (Abel) Avoid unicon dependency altogether
-Patch4:		%{name}-0.2.3-no-unicon.patch
-# 0.2.3-1mdk (Abel) Move config to /etc/zhcon/zhcon.conf
-Patch5:		%{name}-0.2.3-config-location.patch
-# 0.2.3-2mdk (Abel) Ugly hack for allowing big5 input methods
-Patch6:		%{name}-0.2.3-big5.patch
-Patch7:		zhcon-0.2.3-build-fix.patch
-
-Patch8:		zhcon-fix-gcc-3.4.patch
-Patch9:		zhcon-0.2.3-CAN-2005-0072.patch
 Patch10:	zhcon-0.2.3-build.patch
 
 # Patch11:	Official patch, used to patch source 0.2.5 to 0.2.6
@@ -67,7 +49,7 @@ It can also use input methods (table based) from unicon.
 #%patch7 -p0 -b .build
 #%patch8 -p1 -b .fix_gcc_3_4
 #%patch9 -p1 -b .can-2005-0072
-%patch10 -p1 -b .build
+#%patch10 -p1 -b .build
 %patch11 -p1 -b .0-2-6
 %patch12 -p1
 
@@ -89,7 +71,7 @@ tar zxf doc/html.tar.gz
 %install
 [ -z "%buildroot" -o "%buildroot" = "/" ] || rm -rf %buildroot
 
-%makeinstall
+%makeinstall_std
 
 # don't include duplicate locale files
 #pushd %buildroot%{_datadir}/locale
