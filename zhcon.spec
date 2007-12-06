@@ -1,5 +1,5 @@
 %define version 0.2.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Zhcon is a fast CJK console system
 Name:		zhcon
@@ -12,6 +12,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 # http://download.sourceforge.net/zhcon/
 Source0:	%{name}-0.2.5.tar.gz
+Source1:	zhcon.sh
 # Patch0:	Official patch, used to patch source 0.2.5 to 0.2.6
 Patch0:		zhcon-0.2.5-to-0.2.6.diff.gz
 
@@ -57,8 +58,9 @@ touch config.rpath
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-
 %makeinstall_std
+
+install -m755 -D %SOURCE1 %buildroot/etc/profile.d/zhcon.sh
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
@@ -66,6 +68,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING README README.utf8 THANKS TODO doc/bpsf.txt doc/README.html
+%{_sysconfdir}/profile.d/zhcon.sh
 %lang(zh_CN) %doc doc/manual*
 %{_mandir}/man1/*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
