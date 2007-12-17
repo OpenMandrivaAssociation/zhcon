@@ -8,7 +8,6 @@ Release:	%{release}
 License:	GPL
 URL:		http://zhcon.sf.net/
 Group:		System/Internationalization
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 # http://download.sourceforge.net/zhcon/
 Source0:	%{name}-0.2.5.tar.gz
