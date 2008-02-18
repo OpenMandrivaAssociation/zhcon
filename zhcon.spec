@@ -1,7 +1,7 @@
 %define version 0.2.6
 %define release %mkrel 2
 
-Summary:	Zhcon is a fast CJK console system
+Summary:	Fast CJK console system
 Name:		zhcon
 Version:	%{version}
 Release:	%{release}
