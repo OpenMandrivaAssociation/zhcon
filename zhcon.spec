@@ -1,11 +1,11 @@
 %define version 0.2.6
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary:	Fast CJK console system
 Name:		zhcon
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 URL:		http://zhcon.sf.net/
 Group:		System/Internationalization
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -16,11 +16,12 @@ Source1:	zhcon.sh
 # Patch0:	Official patch, used to patch source 0.2.5 to 0.2.6
 Patch0:		zhcon-0.2.5-to-0.2.6.diff.gz
 
-# Patch1,2,3,4 from Fedora
+# Patch1,2,3,4,5 from Fedora
 Patch1:		zhcon-0.2.6-path.patch
 Patch2:		zhcon-0.2.6-path-define.patch
 Patch3:		zhcon-0.2.6-flags.patch
 Patch4:		zhcon-0.2.6-64bit-fix.patch
+Patch5:		zhcon-0.2.6.gcc43.patch
 
 BuildRequires:	automake1.8
 BuildRequires:	gettext-devel
@@ -42,6 +43,7 @@ It can also use input methods (table based) from unicon.
 %patch2 -p1 -b .path_define
 %patch3 -p1 -b .flags
 %patch4 -p1 -b .64bit_fix
+%patch5 -p1 -b .gcc43
 iconv -f GB2312 -t UTF-8 ChangeLog -o ChangeLog.utf && mv -f ChangeLog.utf ChangeLog
 ( cd doc; tar -zxf html.tar.gz; chmod 755 manual)
 
