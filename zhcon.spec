@@ -58,13 +58,13 @@ touch config.rpath
 %make
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 %makeinstall_std
 
 install -m755 -D %SOURCE1 %buildroot/etc/profile.d/zhcon.sh
 
 %clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
