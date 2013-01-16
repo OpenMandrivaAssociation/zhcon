@@ -8,7 +8,6 @@ Release:	%{release}
 License:	GPLv2+
 URL:		http://zhcon.sf.net/
 Group:		System/Internationalization
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source0:	http://ftp.debian.org/debian/pool/main/z/zhcon/zhcon_0.2.6.orig.tar.gz
 Source1:	zhcon.sh
@@ -21,6 +20,8 @@ Patch3: zhcon-0.2.6-gcc43.patch
 Patch4: zhcon-0.2.6-locale.patch
 Patch5: zhcon-0.2.6-keyswitch.patch
 Patch6: zhcon-0.2.6-processor-flags.patch
+
+Patch7: zhcon-automake-1.13.patch
 
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -44,6 +45,7 @@ It can also use input methods (table based) from unicon.
 %patch4 -p0 -b .locale
 %patch5 -p0 -b .keyswitch
 %patch6 -p1 -b .processor-flags
+%patch7 -p1 -b .am113~
 iconv -f GB2312 -t UTF-8 ChangeLog -o ChangeLog.utf && mv -f ChangeLog.utf ChangeLog
 ( cd doc; tar -zxf html.tar.gz; chmod 755 manual)
 

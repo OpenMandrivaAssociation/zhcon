@@ -1,0 +1,11 @@
+--- zhcon-0.2.6/configure.in.bero	2013-01-16 04:14:50.698425372 +0100
++++ zhcon-0.2.6/configure.in	2013-01-16 04:14:55.959362831 +0100
+@@ -4,7 +4,7 @@
+ AC_INIT(src/zhcon.cpp)
+ AM_INIT_AUTOMAKE(zhcon, 0.2.6)
+ AM_MAINTAINER_MODE
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ dnl zhcon_datadir=@libdir@
+ dnl AC_SUBST(zhcon_datadir)
