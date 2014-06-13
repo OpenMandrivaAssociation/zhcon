@@ -1,5 +1,5 @@
 %define version 0.2.6
-%define release 13
+%define release 14
 
 Summary:	Fast CJK console system
 Name:		zhcon
