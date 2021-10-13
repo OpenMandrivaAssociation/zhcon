@@ -50,6 +50,8 @@ iconv -f GB2312 -t UTF-8 ChangeLog -o ChangeLog.utf && mv -f ChangeLog.utf Chang
 ( cd doc; tar -zxf html.tar.gz; chmod 755 manual)
 
 %build
+autoreconf -fiv
+
 # exit if bootstrap fails
 # missing config.rpath causes automake failure
 sed -i -e 's|set -x|set -e -x|' bootstrap
