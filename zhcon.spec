@@ -6,7 +6,7 @@ Name:		zhcon
 Version:	%{version}
 Release:	%{release}
 License:	GPLv2+
-URL:		http://zhcon.sf.net/
+URL:		https://zhcon.sf.net/
 Group:		System/Internationalization
 
 Source0:	http://ftp.debian.org/debian/pool/main/z/zhcon/zhcon_0.2.6.orig.tar.gz
