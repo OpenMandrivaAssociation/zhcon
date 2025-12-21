@@ -23,6 +23,9 @@ Patch6: zhcon-0.2.6-processor-flags.patch
 
 Patch7: zhcon-automake-1.13.patch
 
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel
